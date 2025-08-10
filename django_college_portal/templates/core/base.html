@@ -1,1 +1,316 @@
-<!DOCTYPE html><html><head><title>College Portal</title></head><body>{% block content %}{% endblock %}</body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>College Help Portal</title>
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #0B2D4A;
+        color: white;
+    }
+    
+.logo {
+    transition: all 0.4s ease;
+}
+
+.logo:hover {
+    color: #FFD700;
+    text-shadow: 0 0 5px #FFD700, 0 0 10px #FFD700, 0 0 20px #FFD700;
+    transform: scale(1.08); 
+    transition: all 0.3s ease;
+}
+
+   header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background-color: #0B2D4A;
+}
+
+/* logo styles */
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+.logo img {
+  height: 30px;
+  margin-right: 10px;
+}
+
+/* nav container flex */
+.nav-container {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* space between nav and signup */
+}
+
+/* nav styles */
+nav {
+  display: flex;
+  align-items: center;
+}
+nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: all 0.4s ease;
+}
+
+nav a:hover {
+  color: #FFD700;
+  text-shadow: 0 0 3px #FFD700, 0 0 6px #FFD700;
+  transform: scale(1.05);
+  transition: all 0.25s ease;
+}
+
+/* signup button styles */
+.signup-btn {
+  background-color: #F7C76F;
+  color: black;
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  border: 2px solid transparent;
+  /* no margin needed here, handled by gap */
+}
+
+.signup-btn:hover {
+  background-color: transparent;
+  border: 2px solid #FFD700;
+  color: #FFD700;
+  transform: none !important; /* absolutely no bulge */
+  transition: color 0.25s ease, border-color 0.25s ease, background-color 0.25s ease;
+}
+
+    .hero {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 50px;
+    }
+    .hero-text h1 {
+        font-size: 2.5em;
+        line-height: 1.2;
+    }
+    .hero-text h1 span {
+        color: #F7C76F;
+    }
+    .hero-text p {
+        margin: 10px 0 20px;
+    }
+    .search-bar {
+        display: flex;
+        background: white;
+        border-radius: 25px;
+        overflow: hidden;
+        max-width: 400px;
+    }
+    .search-bar input {
+    flex: 1;
+    border: 2px solid #ccc; /* default grey border */
+    padding: 10px 15px;
+    font-size: 1em;
+    outline: none;
+    border-radius: 25px 0 0 25px; /* if you want rounded edges */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-bar input:hover,
+.search-bar input:focus {
+    border-color: #FFD700;
+    box-shadow: 0 0 6px 3px rgba(255, 215, 0, 0.6);
+}
+
+
+    
+    .search-bar button {
+        background-color: #F7C76F;
+        border: none;
+        padding: 10px 15px;
+        cursor: pointer;
+    }
+    .features {
+        background-color: white;
+        color: black;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        padding: 30px 50px;
+    }
+    .feature-card {
+        background-color: #FAFAFA;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .feature-card h4 {
+        margin: 10px 0 5px;
+    }
+
+    .feature-card {
+    background-color: #FAFAFA;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.feature-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    background-color: #FFF7E0; 
+}
+
+    .testimonials {
+    display: flex;              
+    justify-content: center;    
+    gap: 40px;                  
+    padding: 30px 50px;         
+    background-color: #0B2D4A;  
+    text-align: center;          
+}
+.testimonial {
+    max-width: 250px;
+    padding: 15px;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.testimonial:hover {
+    transform: translateY(-8px); 
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    background-color: rgba(255,255,255,0.05); 
+}
+
+.testimonial {
+    max-width: 250px;        
+}
+.testimonial img {
+    border-radius: 50%;      
+    width: 60px;
+    height: 60px;
+}
+    .cta {
+        text-align: center;
+        padding: 30px;
+        background-color: #0B2D4A;
+    }
+    .cta button {
+        background-color: #F7C76F;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 20px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    .cta button {
+  background-color: #F7C76F;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta button:hover {
+  transform: scale(1.07); /* slight bulge */
+  box-shadow: 0 0 10px 2px rgba(255, 215, 0, 0.5); /* soft golden glow */
+}
+
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <img src="Portal_Logo.svg" alt="Logo" />
+    |
+    COLLEGE HELP PORTAL
+  </div>
+  
+  <div class="nav-container" style="display:flex; align-items:center; gap: 20px;">
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Features</a>
+      <a href="#">Chatbot</a>
+      <a href="#">Services</a>
+      <a href="#">About</a>
+      <a href="#">Login</a>
+    </nav>
+    <a class="signup-btn" href="#">Signup</a> <!-- outside nav but inside nav-container -->
+  </div>
+</header>
+
+<section class="hero">
+    <div class="hero-text">
+        <h1>Your Smart<br>College <span>Assistant</span></h1>
+        <p>One portal, Infinite support.</p>
+        <div class="search-bar">
+            <input type="text" placeholder="Ask me anything...">
+            <button>➔</button>
+        </div>
+    </div>
+    <div class="hero-image">
+        <img src="robot-bot-icon.png" alt="AI Assistant" width="300"/>
+    </div>
+</section>
+
+<section class="features">
+    <div class="feature-card">
+        <h4>Course Recommender</h4>
+        <p>Personalized course guidance</p>
+    </div>
+    <div class="feature-card">
+        <h4>AI Chatbot Support</h4>
+        <p>24/7 instant help</p>
+    </div>
+    <div class="feature-card">
+        <h4>Image Classifier</h4>
+        <p>Upload notes or images to detect</p>
+    </div>
+    <div class="feature-card">
+        <h4>Study Readmapps</h4>
+        <p>Personalized academic plans</p>
+    </div>
+    <div class="feature-card">
+        <h4>Faculty & Dept Finder</h4>
+        <p>Navigate campus resources</p>
+    </div>
+    <div class="feature-card">
+        <h4>Placement Prep</h4>
+        <p>Resume tips and interview questions</p>
+    </div>
+</section>
+
+<section class="testimonials">
+    <div class="testimonial">
+        <img src="man-user-color-icon.webp" alt="User">
+        <p>"A fantastic resource for all my college needs."</p>
+    </div>
+    <div class="testimonial">
+        <img src="business-women-icon.webp" alt="Sarah">
+        <p>"The AI chat is incredibly insightful and responsive."</p>
+    </div>
+    <div class="testimonial">
+        <img src="woman-user-color-icon.png" alt="Emily">
+        <p>"The diary examples have kept me on track."</p>
+    </div>
+</section>
+
+<section class="cta">
+    <h2>Start Your Journey with CGIC Today</h2>
+    <button>Get Started</button>
+</section>
+
+</body>
+</html>
