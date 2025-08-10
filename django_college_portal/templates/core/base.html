@@ -31,7 +31,7 @@
   background-color: #0B2D4A;
 }
 
-/* logo styles */
+
 .logo {
   display: flex;
   align-items: center;
@@ -43,14 +43,14 @@
   margin-right: 10px;
 }
 
-/* nav container flex */
+
 .nav-container {
   display: flex;
   align-items: center;
-  gap: 20px; /* space between nav and signup */
+  gap: 20px; 
 }
 
-/* nav styles */
+
 nav {
   display: flex;
   align-items: center;
@@ -70,7 +70,6 @@ nav a:hover {
   transition: all 0.25s ease;
 }
 
-/* signup button styles */
 .signup-btn {
   background-color: #F7C76F;
   color: black;
@@ -80,14 +79,13 @@ nav a:hover {
   text-decoration: none;
   transition: all 0.25s ease;
   border: 2px solid transparent;
-  /* no margin needed here, handled by gap */
 }
 
 .signup-btn:hover {
   background-color: transparent;
   border: 2px solid #FFD700;
   color: #FFD700;
-  transform: none !important; /* absolutely no bulge */
+  transform: none !important; 
   transition: color 0.25s ease, border-color 0.25s ease, background-color 0.25s ease;
 }
 
@@ -116,11 +114,11 @@ nav a:hover {
     }
     .search-bar input {
     flex: 1;
-    border: 2px solid #ccc; /* default grey border */
+    border: 2px solid #ccc; 
     padding: 10px 15px;
     font-size: 1em;
     outline: none;
-    border-radius: 25px 0 0 25px; /* if you want rounded edges */
+    border-radius: 25px 0 0 25px; 
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -223,8 +221,8 @@ nav a:hover {
 }
 
 .cta button:hover {
-  transform: scale(1.07); /* slight bulge */
-  box-shadow: 0 0 10px 2px rgba(255, 215, 0, 0.5); /* soft golden glow */
+  transform: scale(1.07); 
+  box-shadow: 0 0 10px 2px rgba(255, 215, 0, 0.5); 
 }
 
 </style>
@@ -247,7 +245,7 @@ nav a:hover {
       <a href="#">About</a>
       <a href="#">Login</a>
     </nav>
-    <a class="signup-btn" href="#">Signup</a> <!-- outside nav but inside nav-container -->
+    <a class="signup-btn" href="#">Signup</a>
   </div>
 </header>
 
