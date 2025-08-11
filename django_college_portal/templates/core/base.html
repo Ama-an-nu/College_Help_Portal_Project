@@ -12,88 +12,88 @@
         color: white;
     }
     
-.logo {
-    transition: all 0.4s ease;
-}
+    
+    .logo {
+        transition: all 0.4s ease;
+    }
+    .logo:hover {
+        color: #FFD700;
+        text-shadow: 0 0 5px #FFD700, 0 0 10px #FFD700, 0 0 20px #FFD700;
+        transform: scale(1.08); 
+    }
 
-.logo:hover {
-    color: #FFD700;
-    text-shadow: 0 0 5px #FFD700, 0 0 10px #FFD700, 0 0 20px #FFD700;
-    transform: scale(1.08); 
-    transition: all 0.3s ease;
-}
+    
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 50px;
+        background-color: #0B2D4A;
+        flex-wrap: wrap;
+    }
+    .logo {
+        display: flex;
+        align-items: center;
+        font-size: 1.2em;
+        font-weight: bold;
+    }
+    .logo img {
+        height: 30px;
+        margin-right: 10px;
+    }
 
-   header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 50px;
-  background-color: #0B2D4A;
-}
+    
+    .nav-container {
+        display: flex;
+        align-items: center;
+        gap: 20px; 
+        flex-wrap: wrap;
+    }
+    nav {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    nav a {
+        margin: 0 10px;
+        text-decoration: none;
+        color: white;
+        font-weight: 500;
+        transition: all 0.4s ease;
+    }
+    nav a:hover {
+        color: #FFD700;
+        text-shadow: 0 0 3px #FFD700, 0 0 6px #FFD700;
+        transform: scale(1.05);
+    }
 
+    
+    .signup-btn {
+        background-color: #F7C76F;
+        color: black;
+        padding: 8px 18px;
+        border-radius: 20px;
+        font-weight: bold;
+        text-decoration: none;
+        transition: all 0.25s ease;
+        border: 2px solid transparent;
+    }
+    .signup-btn:hover {
+        background-color: transparent;
+        border: 2px solid #FFD700;
+        color: #FFD700;
+    }
 
-.logo {
-  display: flex;
-  align-items: center;
-  font-size: 1.2em;
-  font-weight: bold;
-}
-.logo img {
-  height: 30px;
-  margin-right: 10px;
-}
-
-
-.nav-container {
-  display: flex;
-  align-items: center;
-  gap: 20px; 
-}
-
-
-nav {
-  display: flex;
-  align-items: center;
-}
-nav a {
-  margin: 0 10px;
-  text-decoration: none;
-  color: white;
-  font-weight: 500;
-  transition: all 0.4s ease;
-}
-
-nav a:hover {
-  color: #FFD700;
-  text-shadow: 0 0 3px #FFD700, 0 0 6px #FFD700;
-  transform: scale(1.05);
-  transition: all 0.25s ease;
-}
-
-.signup-btn {
-  background-color: #F7C76F;
-  color: black;
-  padding: 8px 18px;
-  border-radius: 20px;
-  font-weight: bold;
-  text-decoration: none;
-  transition: all 0.25s ease;
-  border: 2px solid transparent;
-}
-
-.signup-btn:hover {
-  background-color: transparent;
-  border: 2px solid #FFD700;
-  color: #FFD700;
-  transform: none !important; 
-  transition: color 0.25s ease, border-color 0.25s ease, background-color 0.25s ease;
-}
-
+    
     .hero {
         display: flex;
         justify-content: space-between;
         align-items: center;
         padding: 50px;
+        flex-wrap: wrap;
+    }
+    .hero-text {
+        flex: 1 1 300px;
     }
     .hero-text h1 {
         font-size: 2.5em;
@@ -105,6 +105,8 @@ nav a:hover {
     .hero-text p {
         margin: 10px 0 20px;
     }
+
+    
     .search-bar {
         display: flex;
         background: white;
@@ -113,29 +115,27 @@ nav a:hover {
         max-width: 400px;
     }
     .search-bar input {
-    flex: 1;
-    border: 2px solid #ccc; 
-    padding: 10px 15px;
-    font-size: 1em;
-    outline: none;
-    border-radius: 25px 0 0 25px; 
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.search-bar input:hover,
-.search-bar input:focus {
-    border-color: #FFD700;
-    box-shadow: 0 0 6px 3px rgba(255, 215, 0, 0.6);
-}
-
-
-    
+        flex: 1;
+        border: 2px solid #ccc; 
+        padding: 10px 15px;
+        font-size: 1em;
+        outline: none;
+        border-radius: 25px 0 0 25px; 
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    .search-bar input:hover,
+    .search-bar input:focus {
+        border-color: #FFD700;
+        box-shadow: 0 0 6px 3px rgba(255, 215, 0, 0.6);
+    }
     .search-bar button {
         background-color: #F7C76F;
         border: none;
         padding: 10px 15px;
         cursor: pointer;
     }
+
+    
     .features {
         background-color: white;
         color: black;
@@ -149,54 +149,42 @@ nav a:hover {
         padding: 20px;
         border-radius: 10px;
         box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease; 
     }
-    .feature-card h4 {
-        margin: 10px 0 5px;
+    .feature-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+        background-color: #FFF7E0; 
     }
 
-    .feature-card {
-    background-color: #FAFAFA;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease; 
-}
-
-.feature-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
-    background-color: #FFF7E0; 
-}
-
+    
     .testimonials {
-    display: flex;              
-    justify-content: center;    
-    gap: 40px;                  
-    padding: 30px 50px;         
-    background-color: #0B2D4A;  
-    text-align: center;          
-}
-.testimonial {
-    max-width: 250px;
-    padding: 15px;
-    border-radius: 10px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease; 
-}
+        display: flex;              
+        justify-content: center;    
+        gap: 40px;                  
+        padding: 30px 50px;         
+        background-color: #0B2D4A;  
+        text-align: center;  
+        flex-wrap: wrap;        
+    }
+    .testimonial {
+        max-width: 250px;
+        padding: 15px;
+        border-radius: 10px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    }
+    .testimonial img {
+        border-radius: 50%;      
+        width: 60px;
+        height: 60px;
+    }
+    .testimonial:hover {
+        transform: translateY(-8px); 
+        box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+        background-color: rgba(255,255,255,0.05); 
+    }
 
-.testimonial:hover {
-    transform: translateY(-8px); 
-    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
-    background-color: rgba(255,255,255,0.05); 
-}
-
-.testimonial {
-    max-width: 250px;        
-}
-.testimonial img {
-    border-radius: 50%;      
-    width: 60px;
-    height: 60px;
-}
+    
     .cta {
         text-align: center;
         padding: 30px;
@@ -209,35 +197,64 @@ nav a:hover {
         border-radius: 20px;
         font-weight: bold;
         cursor: pointer;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-    .cta button {
-  background-color: #F7C76F;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 20px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+    .cta button:hover {
+        transform: scale(1.07); 
+        box-shadow: 0 0 10px 2px rgba(255, 215, 0, 0.5); 
+    }
 
-.cta button:hover {
-  transform: scale(1.07); 
-  box-shadow: 0 0 10px 2px rgba(255, 215, 0, 0.5); 
-}
+    
+    @media (max-width: 768px) {
+        header {
+            flex-direction: column;
+            padding: 20px;
+        }
+        .nav-container {
+            flex-direction: column;
+            gap: 10px;
+        }
+        .hero {
+            flex-direction: column;
+            text-align: center;
+        }
+        .hero-image img {
+            width: 80%;
+            margin-top: 20px;
+        }
+        .search-bar {
+            max-width: 100%;
+            margin: auto;
+        }
+        .testimonials {
+            flex-direction: column;
+            gap: 20px;
+        }
+    }
 
+    @media (max-width: 480px) {
+        .hero-text h1 {
+            font-size: 1.8em;
+        }
+        nav {
+            flex-direction: column;
+            gap: 10px;
+        }
+        .features {
+            padding: 20px;
+            grid-template-columns: 1fr;
+        }
+    }
 </style>
-
 </head>
 <body>
 
 <header>
   <div class="logo">
     <img src="Portal_Logo.svg" alt="Logo" />
-    |
-    COLLEGE HELP PORTAL
+    | COLLEGE HELP PORTAL
   </div>
-  
-  <div class="nav-container" style="display:flex; align-items:center; gap: 20px;">
+  <div class="nav-container">
     <nav>
       <a href="#">Home</a>
       <a href="#">Features</a>
@@ -278,7 +295,7 @@ nav a:hover {
         <p>Upload notes or images to detect</p>
     </div>
     <div class="feature-card">
-        <h4>Study Readmapps</h4>
+        <h4>Study Roadmaps</h4>
         <p>Personalized academic plans</p>
     </div>
     <div class="feature-card">
