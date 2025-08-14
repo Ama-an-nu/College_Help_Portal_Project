@@ -5,3 +5,6 @@ def dashboard(request):
 
 def chat_page(request):
     return render(request, 'core/chatbot.html')
+
+def base(request):
+    return render(request, 'core/base.html')
