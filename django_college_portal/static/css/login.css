@@ -1,0 +1,91 @@
+
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #2f6091;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        padding: 20px; 
+        box-sizing: border-box;
+    }
+    .login-container {
+        background-color: #053c69;
+        padding: 40px 30px;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        width: 100%;
+        max-width: 350px;
+        text-align: center;
+    }
+    .login-container h2 {
+        margin-bottom: 20px;
+        color: #F7C76F;
+        font-size: 1.8em;
+    }
+    .login-container input {
+        width: 100%;
+        padding: 12px;
+        margin: 10px 0;
+        border: none;
+        border-radius: 8px;
+        outline: none;
+        font-size: 1em;
+        box-sizing: border-box;
+    }
+    .login-container input[type="text"],
+    .login-container input[type="password"] {
+        background-color: #FAFAFA;
+        color: #333;
+    }
+    .login-container button {
+        width: 100%;
+        padding: 12px;
+        background-color: #F7C76F;
+        border: none;
+        border-radius: 8px;
+        font-weight: bold;
+        font-size: 1em;
+        cursor: pointer;
+        margin-top: 15px;
+        transition: 0.3s;
+    }
+    .login-container button:hover {
+        background-color: #e6b85f;
+    }
+    .login-container p {
+        margin-top: 15px;
+        font-size: 0.9em;
+    }
+    .login-container a {
+        color: #F7C76F;
+        text-decoration: none;
+    }
+
+    
+    @media (max-width: 480px) {
+        .login-container {
+            padding: 25px 20px;
+            max-width: 100%;
+        }
+        .login-container h2 {
+            font-size: 1.5em;
+        }
+        .login-container input, 
+        .login-container button {
+            font-size: 0.95em;
+            padding: 10px;
+        }
+    }
+
+    @media (min-width: 768px) and (max-width: 1024px) {
+        .login-container {
+            max-width: 400px;
+            padding: 45px 35px;
+        }
+        .login-container h2 {
+            font-size: 2em;
+        }
+    }
