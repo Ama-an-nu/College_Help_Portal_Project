@@ -2,7 +2,7 @@
     body {
         margin: 0;
         font-family: Arial, sans-serif;
-        background-color: #2f6091;
+        background-color: #0B2D4A;
         color: white;
         display: flex;
         justify-content: center;
@@ -89,3 +89,54 @@
             font-size: 2em;
         }
     }
+header {
+  position: relative;       /* make header a positioning parent */
+  background-color: #053c69;
+  height: 70px;             /* fixed height for header */
+  width: 100%;
+  z-index: 1000;
+}
+
+.logo {
+  position: absolute;       /* pin inside header */
+  top: 10px;                /* distance from top */
+  left: 20px;               /* distance from left */
+  display: flex;
+  align-items: center;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.logo img {
+  height: 35px;
+  margin-right: 8px;
+}
+
+.logo:hover {
+  color: #FFD700;
+  text-shadow: 
+    0 0 5px #FFD700, 
+    0 0 10px #FFD700, 
+    0 0 20px #FFD700;
+  transform: scale(1.08);
+}
+
+.logo a {
+    text-decoration: none;   /* removes underline */
+    color: inherit;          /* keeps same text color as parent */
+    display: flex;           /* align image + text nicely */
+    align-items: center;
+}
+
+.logo a:hover {
+    color: #FFD700;          /* gold hover */
+    text-shadow: 
+        0 0 5px #FFD700,
+        0 0 10px #FFD700,
+        0 0 20px #FFD700;
+    transform: scale(1.08);
+    transition: all 0.3s ease;
+}

@@ -6,6 +6,43 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Signup - College Help Portal</title>
 <style>
+
+    header {
+  position: relative;       /* make header a positioning parent */
+  background-color: #053c69;
+  height: 70px;             /* fixed height for header */
+  width: 100%;
+  z-index: 1000;
+}
+
+.logo {
+  position: absolute;       /* pin inside header */
+  top: 10px;                /* distance from top */
+  left: 20px;               /* distance from left */
+  display: flex;
+  align-items: center;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.logo img {
+  height: 35px;
+  margin-right: 8px;
+}
+
+.logo:hover {
+  color: #FFD700;
+  text-shadow: 
+    0 0 5px #FFD700, 
+    0 0 10px #FFD700, 
+    0 0 20px #FFD700;
+  transform: scale(1.08);
+}
+
+
     body {
         margin: 0;
         font-family: Arial, sans-serif;
@@ -62,20 +99,46 @@
         text-decoration: none;
         font-weight: bold;
     }
+
+    .logo a {
+    text-decoration: none;   /* removes underline */
+    color: inherit;          /* keeps same text color as parent */
+    display: flex;           /* align image + text nicely */
+    align-items: center;
+}
+
+.logo a:hover {
+    color: #FFD700;          /* gold hover */
+    text-shadow: 
+        0 0 5px #FFD700,
+        0 0 10px #FFD700,
+        0 0 20px #FFD700;
+    transform: scale(1.08);
+    transition: all 0.3s ease;
+}
+
 </style>
 </head>
 <body>
 
+    <div class="logo">
+    <a href="{% url 'base' %}">
+        <img src="{% static 'images/Portal_Logo.svg' %}" alt="Logo" />
+        | COLLEGE HELP PORTAL
+    </a>
+</div>
+
 <div class="signup-container">
     <h2>Create Account</h2>
-    <form method="post" action="{% url 'signup_page' %}">
-        {% csrf_token %}
-        <input type="text" name="full_name" placeholder="Full Name" required>
-        <input type="email" name="email" placeholder="Email Address" required>
-        <input type="password" name="password1" placeholder="Password" required>
-        <input type="password" name="password2" placeholder="Confirm Password" required>
-        <button type="submit">Sign Up</button>
-    </form>
+   <form method="post" action="{% url 'signup_page' %}">
+    {% csrf_token %}
+    <input type="text" name="username" placeholder="Username" required>
+    <input type="email" name="email" placeholder="Email Address" required>
+    <input type="password" name="password1" placeholder="Password" required>
+    <input type="password" name="password2" placeholder="Confirm Password" required>
+    <button type="submit">Sign Up</button>
+</form>
+
     <p>Already have an account? <a href="{% url 'login_page' %}">Login</a></p>
 </div>
 
