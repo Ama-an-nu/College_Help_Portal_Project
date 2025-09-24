@@ -69,7 +69,7 @@
     <nav>
       <a href="#">Home</a>
       <a href="{% url 'features_page' %}">Features</a>
-      <a href="#">Chatbot</a>
+      <a href="{% url 'chatbot_page' %}">Chatbot</a>
       <a href="{% url 'services_page' %}">Services</a>
       <a href="{% url 'about_page' %}">About</a>
       <a href="{% url 'login_page' %}">Login</a>
@@ -79,18 +79,28 @@
 </header>
 
 <section class="hero">
-    <div class="hero-text">
-        <h1>Your Smart<br>College <span>Assistant</span></h1>
-        <p>One portal, Infinite support.</p>
-        <div class="search-bar">
-            <input type="text" placeholder="Ask me anything...">
-            <button>➔</button>
-        </div>
-    </div>
-    <div class="hero-image">
-        <img src="{% static 'images/robot-bot-icon.png' %}" alt="AI Assistant" width="300"/>
-    </div>
+  <div class="hero-text">
+      <h1>Your Smart<br>College <span>Assistant</span></h1>
+      <p>One portal, Infinite support.</p>
+
+      
+      <div class="search-bar">
+  <form action="{% url 'chat_page' %}" method="get" style="display:flex; flex:1;">
+    <input type="text" name="query" placeholder="Ask me anything..." required>
+    <button type="submit">➔</button>
+  </form>
+</div>
+
+  </div>
+
+  <div class="hero-image">
+      <img src="{% static 'images/robot-bot-icon.png' %}" alt="AI Assistant" width="300"/>
+  </div>
 </section>
+
+
+
+
 
 <section class="features">
     <div class="feature-card">

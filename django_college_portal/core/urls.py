@@ -11,5 +11,7 @@ urlpatterns = [
     path("about/", views.about_page, name="about_page"),
     path("services/", views.services_page, name="services_page"),
     path("features/", views.features_page, name="features_page"),
+    path("chatbot/", views.chatbot_page, name="chatbot_page"),
+
 
 ]

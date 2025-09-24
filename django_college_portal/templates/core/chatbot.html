@@ -1,11 +1,55 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chatbot - College Help Portal</title>
+  <link rel="stylesheet" href="{% static 'css/chatbot.css' %}">
 </head>
 <body>
-    <h1>GG HHH</h1>
+
+<header>
+  <div class="logo">
+    <a href="{% url 'base' %}">
+      <img src="{% static 'images/Portal_Logo.svg' %}" alt="Logo" />
+      | COLLEGE HELP PORTAL
+    </a>
+  </div>
+</header>
+
+
+
+<main class="chat-wrapper">
+  <div class="chat-container">
+    <div class="chat-window" id="chat-window">
+      
+      {% if query %}
+        <!-- Show user query if redirected from hero search bar -->
+        <div class="message user">{{ query }}</div>
+        <div class="message bot">
+          I see you asked about "{{ query }}". Let me help you with that.
+        </div>
+      {% else %}
+        <!-- Default greeting if no query -->
+        <div class="message bot">
+          Hello 👋 I’m your College Help Assistant. How can I help?
+        </div>
+      {% endif %}
+      
+    </div>
+
+    <form class="chat-input" id="chat-form" method="post">
+      {% csrf_token %}
+      <input type="text" id="user-input" name="message" placeholder="Type your message..." required>
+      <button type="submit">➤</button>
+    </form>
+  </div>
+</main>
+
+
+    
+ 
+
 </body>
 </html>

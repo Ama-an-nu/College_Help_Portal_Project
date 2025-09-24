@@ -101,36 +101,42 @@ nav a:hover {
         margin: 10px 0 20px;
     }
     .search-bar {
-        display: flex;
-        background: white;
-        border-radius: 25px;
-        overflow: hidden;
-        max-width: 400px;
-    }
-    .search-bar input {
-    flex: 1;
-    border: 2px solid #ccc; 
-    padding: 10px 15px;
-    font-size: 1em;
-    outline: none;
-    border-radius: 25px 0 0 25px; 
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  align-items: center;
+  max-width: 400px;
+  margin: 0 auto;
+  border-radius: 999px;   /* full pill */
+  overflow: hidden;       /* clips children so no gaps */
+  background: white;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
-.search-bar input:hover,
-.search-bar input:focus {
-    border-color: #FFD700;
-    box-shadow: 0 0 6px 3px rgba(255, 215, 0, 0.6);
+/* Input */
+.search-bar input {
+  flex: 1;
+  padding: 12px 18px;
+  border: none;
+  outline: none;
+  font-size: 1em;
+  border-radius: 0;       /* reset so no double pill edges */
 }
 
+/* Button */
+.search-bar button {
+  background: #F7C76F;
+  color: #053c69;
+  border: none;
+  padding: 12px 24px;     /* bigger padding to align arrow */
+  font-size: 1.2em;
+  border-radius: 0;       /* reset */
+  cursor: pointer;
+  transition: background 0.3s;
+}
 
-    
-    .search-bar button {
-        background-color: #F7C76F;
-        border: none;
-        padding: 10px 15px;
-        cursor: pointer;
-    }
+.search-bar button:hover {
+  background: #FFD700;
+}
+
     .features {
         background-color: white;
         color: black;

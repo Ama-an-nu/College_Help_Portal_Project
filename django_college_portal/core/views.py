@@ -69,3 +69,7 @@ def services_page(request):
 
 def features_page(request):
     return render(request, "core/features.html")
+
+def chatbot_page(request):
+    query = request.GET.get("query", "")
+    return render(request, "core/chatbot.html", {"query": query})
