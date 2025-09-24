@@ -59,3 +59,13 @@ def signup_page(request):
     return render(request, "core/signup.html")
    
 
+def about_page(request):
+    return render(request, "core/about.html")
+
+
+def services_page(request):
+    return render(request, "core/services.html")
+
+
+def features_page(request):
+    return render(request, "core/features.html")

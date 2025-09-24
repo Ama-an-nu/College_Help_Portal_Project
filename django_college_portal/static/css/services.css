@@ -1,0 +1,161 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f9f9f9;
+  color: #053c69;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  background-color: #053c69;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  z-index: 1000;
+}
+
+.logo a {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1.2em;
+  color: white;
+}
+
+.logo img {
+  height: 30px;
+  margin-right: 10px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+  color: #FFD700;
+}
+
+.signup-btn {
+  background: #FFD700;
+  color: #053c69;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.signup-btn:hover {
+  background: white;
+  color: #053c69;
+}
+
+.services {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.services h2 {
+  font-size: 2em;
+  margin-bottom: 40px;
+  color: #053c69;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.service-card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+.service-card h3 {
+  color: #053c69;
+  margin-bottom: 10px;
+}
+
+.service-card p {
+  color: #333;
+  font-size: 0.95em;
+}
+
+/* Logo container */
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.3em;
+  font-weight: bold;
+  margin: 0;
+  transition: all 0.4s ease;
+}
+
+/* Logo link (so text + img act as one unit) */
+.logo a {
+  text-decoration: none;
+  color: white;               /* default color */
+  display: flex;
+  align-items: center;
+  gap: 8px;                   /* space between image and text */
+  transition: all 0.3s ease;
+}
+
+/* Logo image */
+.logo img {
+  height: 35px;
+}
+
+/* Hover effect */
+.logo a:hover {
+  color: #FFD700;             /* gold hover */
+  text-shadow: 
+    0 0 5px #FFD700,
+    0 0 10px #FFD700,
+    0 0 20px #FFD700;
+  transform: scale(1.08);     /* subtle zoom */
+}
+
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  gap: 20px; 
+}
+
+
+nav {
+  display: flex;
+  align-items: center;
+}
+nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: all 0.4s ease;
+}
+
+nav a:hover {
+  color: #FFD700;
+  text-shadow: 0 0 3px #FFD700, 0 0 6px #FFD700;
+  transform: scale(1.05);
+  transition: all 0.25s ease;
+}

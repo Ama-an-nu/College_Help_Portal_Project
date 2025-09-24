@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services - College Help Portal</title>
+  <link rel="stylesheet" href="{% static 'css/services.css' %}">
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <a href="{% url 'base' %}">
+      <img src="{% static 'images/Portal_Logo.svg' %}" alt="Logo" />
+      | COLLEGE HELP PORTAL
+    </a>
+  </div>
+  <nav>
+    <a href="{% url 'base' %}">Home</a>
+    <a href="{% url 'features_page' %}">Features</a>
+    <a href="{% url 'services_page' %}" class="active">Services</a>
+    <a href="{% url 'about_page' %}">About</a>
+    <a href="{% url 'login_page' %}">Login</a>
+    <a href="{% url 'signup_page' %}" class="signup-btn">Signup</a>
+  </nav>
+</header>
+
+<main>
+  <section class="services">
+    <h2>Our Services</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <h3>💬 AI Chatbot</h3>
+        <p>24/7 student and faculty assistance with instant responses.</p>
+      </div>
+      <div class="service-card">
+        <h3>📚 Course Recommender</h3>
+        <p>Helps students choose the right courses for their goals.</p>
+      </div>
+      <div class="service-card">
+        <h3>🎓 Placement Prep</h3>
+        <p>Resume building, mock interviews, and job readiness support.</p>
+      </div>
+      <div class="service-card">
+        <h3>📖 Study Materials</h3>
+        <p>Access curated notes, assignments, and past exam papers.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+</body>
+</html>

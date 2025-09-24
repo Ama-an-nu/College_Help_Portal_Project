@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Features - College Help Portal</title>
+  <link rel="stylesheet" href="{% static 'css/features.css' %}">
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <a href="{% url 'base' %}">
+      <img src="{% static 'images/Portal_Logo.svg' %}" alt="Logo" />
+      | COLLEGE HELP PORTAL
+    </a>
+  </div>
+  <nav>
+    <a href="{% url 'base' %}">Home</a>
+    <a href="{% url 'features_page' %}" class="active">Features</a>
+    <a href="{% url 'services_page' %}">Services</a>
+    <a href="{% url 'about_page' %}">About</a>
+    <a href="{% url 'login_page' %}">Login</a>
+    <a href="{% url 'signup_page' %}" class="signup-btn">Signup</a>
+  </nav>
+</header>
+
+<main>
+  <section class="features">
+    <h2>Our Features</h2>
+    <p class="intro">
+      The College Help Portal offers powerful features designed to make student life easier.  
+      Explore our key features below:
+    </p>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <h3>🔍 Smart Search</h3>
+        <p>Quickly find study materials, notes, and past exam papers tailored to your course.</p>
+      </div>
+
+      <div class="feature-card">
+        <h3>🤖 AI Chatbot</h3>
+        <p>Instant answers to common queries — available 24/7 for students and faculty.</p>
+      </div>
+
+      <div class="feature-card">
+        <h3>📅 Event Reminders</h3>
+        <p>Stay updated with important academic deadlines and campus events.</p>
+      </div>
+
+      <div class="feature-card">
+        <h3>📊 Progress Tracker</h3>
+        <p>Track your course progress, assignments, and upcoming tasks with ease.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+</body>
+</html>

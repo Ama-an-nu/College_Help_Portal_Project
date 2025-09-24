@@ -68,10 +68,10 @@
   <div class="nav-container">
     <nav>
       <a href="#">Home</a>
-      <a href="#">Features</a>
+      <a href="{% url 'features_page' %}">Features</a>
       <a href="#">Chatbot</a>
-      <a href="#">Services</a>
-      <a href="#">About</a>
+      <a href="{% url 'services_page' %}">Services</a>
+      <a href="{% url 'about_page' %}">About</a>
       <a href="{% url 'login_page' %}">Login</a>
     </nav>
     <a class="signup-btn" href="{% url 'signup_page' %}">Signup</a>
