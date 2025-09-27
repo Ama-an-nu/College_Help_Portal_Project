@@ -7,52 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>College Help Portal</title>
 <link rel="stylesheet" href="{% static 'css/base.css' %}">
+<script src="{% static 'js/base.js' %}"></script>
+
 </head>
-<style>
 
-
-
-
-
-/* .flash-messages {
-    position: fixed;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%); 
-    z-index: 1000;
-    text-align: center;
-    width: auto;
-    max-width: 80%; 
-}
-
-.alert {
-    background: #F7C76F;
-    color: #0B2D4A;
-    padding: 12px 20px;
-    border-radius: 8px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-    display: inline-block; 
-    animation: fadeOut 4s forwards;
-}
-
-.alert.error {
-    background: #E57373;
-    color: white;
-}
-
-@keyframes fadeOut {
-    0% { opacity: 1; }
-    80% { opacity: 1; }
-    100% { opacity: 0; transform: translateY(-20px); }
-}
-
-.logout-btn {
-    background-color: #E57373; 
-} */
-
-</style>
 <body>
 
       {% if messages %}
@@ -72,15 +30,39 @@
   </div>
   <div class="nav-container">
     <nav>
-      <a href="#">Home</a>
+      
       <a href="{% url 'features_page' %}">Features</a>
       <a href="{% url 'chatbot_page' %}">Chatbot</a>
       <a href="{% url 'services_page' %}">Services</a>
       <a href="{% url 'about_page' %}">About</a>
-      <a href="{% url 'login_page' %}">Login</a>
+      
     </nav>
-    <a class="signup-btn" href="{% url 'signup_page' %}">Signup</a>
+  <!-- Profile Dropdown -->
+{% if user.is_authenticated %}
+<div class="profile-dropdown">
+  <button type="button" class="profile-btn">
+    <img src="{% if user.profile.image %}{{ user.profile.image.url }}{% else %}{% static 'images/man-user-color-icon.webp' %}{% endif %}" 
+         alt="User" class="profile-icon">
+    {{ user.username }}
+    <span class="arrow">▾</span>
+  </button>
+
+  <div class="dropdown-menu">
+    <div class="user-info">
+      <img src="{% if user.profile.image %}{{ user.profile.image.url }}{% else %}{% static 'images/man-user-color-icon.webp' %}{% endif %}" 
+           alt="User" class="dropdown-profile-pic">
+      <div>
+        <strong>{{ user.username }}</strong><br>
+        <small>{{ user.email }}</small>
+      </div>
+    </div>
+    <hr>
+    <a href="#">Change Profile Picture</a>
+    <a href="{% url 'logout' %}" class="logout-btn">Logout</a>
   </div>
+</div>
+{% endif %}
+
 </header>
 
 <section class="hero">
@@ -90,7 +72,7 @@
 
       
       <div class="search-bar">
-  <form action="{% url 'chat_page' %}" method="get" style="display:flex; flex:1;">
+  <form action="{% url 'chatbot_page' %}" method="get" style="display:flex; flex:1;">
     <input type="text" name="query" placeholder="Ask me anything..." required>
     <button type="submit">➔</button>
   </form>
@@ -135,26 +117,15 @@
 </section>
 
 
-<section class="testimonials">
-    <div class="testimonial">
-        <img src="{% static 'images/man-user-color-icon.webp' %}" alt="User">
-        <p>"A fantastic resource for all my college needs."</p>
-    </div>
-    <div class="testimonial">
-        <img src="{% static 'images/business-women-icon.webp' %}" alt="Sarah">
-        <p>"The AI chat is incredibly insightful and responsive."</p>
-    </div>
-    <div class="testimonial">
-        <img src="{% static 'images/woman-user-color-icon.png'%}" alt="Emily">
-        <p>"The diary examples have kept me on track."</p>
-    </div>
-</section>
-
-<section class="cta">
-  <h2>Start Your Journey with CGIC Today</h2>
-  <a href="{% url 'signup_page' %}">
-    <button>Get Started</button>
-  </a>
+<!-- Greeting Section -->
+<section class="greetings">
+  {% if user.is_authenticated %}
+    <h2>Welcome back, {{ user.username }} 🎉</h2>
+    <p>Glad to see you again! Let's get started with your college journey.</p>
+  {% else %}
+    <h2>Welcome to College Help Portal 🎓</h2>
+    <p>Please <a href="{% url 'login_page' %}">Login</a> or <a href="{% url 'signup_page' %}">Signup</a> to continue.</p>
+  {% endif %}
 </section>
 
 

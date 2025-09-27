@@ -1,0 +1,148 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>College Help Portal</title>
+  <link rel="stylesheet" href="{% static 'css/base.css' %}">
+  <script src="{% static 'js/landing.js' %}" defer></script>
+</head>
+
+<body>
+  {% if messages %}
+  <div class="flash-messages">
+    {% for message in messages %}
+    <div class="alert {{ message.tags }}">{{ message }}</div>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  <header>
+    <div class="logo">
+      <img src="{% static 'images/Portal_Logo.svg' %}" alt="Logo" /> | COLLEGE HELP PORTAL
+    </div>
+    <div class="nav-container">
+      <nav>
+        {% if user.is_authenticated %}
+        
+        <a href="{% url 'features_page' %}">Features</a>
+        <a href="{% url 'chatbot_page' %}">Chatbot</a>
+        <a href="{% url 'services_page' %}">Services</a>
+        <a href="{% url 'about_page' %}">About</a>
+        <a href="{% url 'logout' %}">Logout</a>
+        {% else %}
+        
+        <a href="#" class="protected">Features</a>
+        <a href="#" class="protected">Chatbot</a>
+        <a href="#" class="protected">Services</a>
+        <a href="#" class="protected">About</a>
+        <a href="{% url 'login_page' %}">Login</a>
+        {% endif %}
+      </nav>
+      {% if not user.is_authenticated %}
+      <a class="signup-btn" href="{% url 'signup_page' %}">Signup</a>
+      {% endif %}
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Your Smart<br>College <span>Assistant</span></h1>
+      <p>One portal, Infinite support.</p>
+      <div class="search-bar">
+        {% if user.is_authenticated %}
+        <form action="{% url 'chatbot_page' %}" method="get" style="display:flex; flex:1;">
+          <input type="text" name="query" placeholder="Ask me anything..." required>
+          <button type="submit">➔</button>
+        </form>
+        {% else %}
+        <form action="#" class="protected" style="display:flex; flex:1;">
+          <input type="text" placeholder="Login required..." disabled>
+          <button type="button">➔</button>
+        </form>
+        {% endif %}
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="{% static 'images/robot-bot-icon.png' %}" alt="AI Assistant" width="300" />
+    </div>
+  </section>
+
+  <section class="features">
+    {% if user.is_authenticated %}
+    <a href="{% url 'features_page' %}" class="feature-card">
+      <h4>Course Recommender</h4>
+      <p>Personalized course guidance</p>
+    </a>
+    <a href="{% url 'chatbot_page' %}" class="feature-card">
+      <h4>AI Chatbot Support</h4>
+      <p>24/7 instant help</p>
+    </a>
+    <a href="{% url 'notes_page' %}" class="feature-card">
+      <h4>Notes</h4>
+      <p>Upload/Download notes for specific Subject</p>
+    </a>
+    <a href="#" class="feature-card">
+      <h4>Faculty & Dept Finder</h4>
+      <p>Navigate campus resources</p>
+    </a>
+    <a href="#" class="feature-card">
+      <h4>Placement Prep</h4>
+      <p>Resume tips and interview questions</p>
+    </a>
+    {% else %}
+    <a href="#" class="feature-card protected">
+      <h4>Course Recommender</h4>
+      <p>Personalized course guidance</p>
+    </a>
+    <a href="#" class="feature-card protected">
+      <h4>AI Chatbot Support</h4>
+      <p>24/7 instant help</p>
+    </a>
+    <a href="#" class="feature-card protected">
+      <h4>Notes</h4>
+      <p>Upload/Download notes for specific Subject</p>
+    </a>
+    <a href="#" class="feature-card protected">
+      <h4>Faculty & Dept Finder</h4>
+      <p>Navigate campus resources</p>
+    </a>
+    <a href="#" class="feature-card protected">
+      <h4>Placement Prep</h4>
+      <p>Resume tips and interview questions</p>
+    </a>
+    {% endif %}
+  </section>
+
+
+  {% if not user.is_authenticated %}
+  <div id="loginModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Access Restricted</h2>
+      <p>Please <a href="{% url 'login_page' %}">Login</a> or
+        <a href="{% url 'signup_page' %}">Signup</a> to continue.
+      </p>
+    </div>
+  </div>
+  {% endif %}
+
+
+  <section class="testimonials">
+    <div class="testimonial"> <img src="{% static 'images/man-user-color-icon.webp' %}" alt="User">
+      <p>"A fantastic resource for all my college needs."</p>
+    </div>
+    <div class="testimonial"> <img src="{% static 'images/business-women-icon.webp' %}" alt="Sarah">
+      <p>"The AI chat is incredibly insightful and responsive."</p>
+    </div>
+    <div class="testimonial"> <img src="{% static 'images/woman-user-color-icon.png'%}" alt="Emily">
+      <p>"The diary examples have kept me on track."</p>
+    </div>
+  </section>
+  <section class="cta">
+    <h2>Start Your Journey with CGIC Today</h2> <a href="{% url 'signup_page' %}"> <button>Get Started</button> </a>
+  </section </body>
+
+</html>

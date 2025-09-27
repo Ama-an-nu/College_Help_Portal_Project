@@ -102,3 +102,8 @@ def notes_page(request):
 
     return render(request, "core/notes.html", {"notes": notes})
 
+
+def landing_page(request):
+    if request.user.is_authenticated:
+        return redirect('base')
+    return render(request, "core/landing.html")
