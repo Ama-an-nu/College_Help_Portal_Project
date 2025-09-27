@@ -1,0 +1,95 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Notes</title>
+    <link rel="stylesheet" href="{% static 'css/notes.css' %}">
+    <script src="{% static 'js/notes.js' %}"></script>
+</head>
+<body>
+
+    <style>
+
+    </style>
+
+
+   <a href="{% url 'base' %}" class="logo-link">
+  <header>College Notes Portal</header>
+</a>
+
+
+    <div class="container">
+        <!-- Permanent Upload Button -->
+        <button id="uploadBtn">Upload Notes</button>
+
+        <!-- Popup for Upload -->
+        <div id="uploadModal" class="modal">
+            <div class="modal-content">
+                <span id="closeModal">&times;</span>
+                <h2>Upload Notes</h2>
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <label for="upload_semester">Semester:</label>
+                    <select id="upload_semester" name="semester" required>
+                        <option value="">-- Select Semester --</option>
+                        <option value="1">Semester 1</option>
+                        <option value="2">Semester 2</option>
+                        <option value="3">Semester 3</option>
+                        <option value="4">Semester 4</option>
+                        <option value="5">Semester 5</option>
+                        <option value="6">Semester 6</option>
+                    </select>
+
+                    <label for="upload_subject">Subject:</label>
+                    <select id="upload_subject" name="subject" required>
+                        <option value="">-- Select Subject --</option>
+                    </select>
+
+                    <input type="file" name="file" required>
+                    <button type="submit">Upload</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Download Section -->
+        <h2>Download Notes</h2>
+        <form method="get">
+            <label for="semester">Semester:</label>
+            <select id="semester" name="semester" required>
+                <option value="">-- Select Semester --</option>
+                <option value="1">Semester 1</option>
+                <option value="2">Semester 2</option>
+                <option value="3">Semester 3</option>
+                <option value="4">Semester 4</option>
+                <option value="5">Semester 5</option>
+                <option value="6">Semester 6</option>
+            </select>
+
+            <label for="subject">Subject:</label>
+            <select id="subject" name="subject" required>
+                <option value="">-- Select Subject --</option>
+            </select>
+
+            <button type="submit">Download Notes</button>
+        </form>
+
+       {% if notes %}
+    <h3>Available Notes</h3>
+    <div class="notes-list">
+        {% for note in notes %}
+            <div class="note-card">
+                <h4>Semester {{ note.semester }} - {{ note.subject }}</h4>
+                <p>📅 Uploaded on: {{ note.uploaded_at|date:"M d, Y" }}</p>
+                <p>📁 File: {{ note.file.name|slice:"6:" }}</p>
+
+                <div class="actions">
+                    <a href="{{ note.file.url }}" target="_blank" class="btn-preview">🔎 Preview</a>
+                    <a href="{{ note.file.url }}" download class="btn-download">⬇ Download</a>
+                </div>
+            </div>
+        {% empty %}
+            <p>No notes found.</p>
+        {% endfor %}
+    </div>
+{% endif %}

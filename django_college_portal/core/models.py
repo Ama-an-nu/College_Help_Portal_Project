@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 
 
+
 class Department(models.Model):
     name = models.CharField(max_length=100, unique=True)
     description = models.TextField(blank=True)
@@ -61,12 +62,6 @@ class Event(models.Model):
         return f"{self.title} ({self.date.date()})"
 
 
-class StudyRoadmap(models.Model):
-    course = models.ForeignKey(Course, on_delete=models.CASCADE)
-    content = models.TextField(help_text="Steps, guidelines, or topics to cover")
-
-    def __str__(self):
-        return f"Roadmap for {self.course.title}"
 
 
 class Resource(models.Model):
@@ -77,3 +72,15 @@ class Resource(models.Model):
 
     def __str__(self):
         return self.title
+
+
+
+
+class Note(models.Model):
+    semester = models.CharField(max_length=10)
+    subject = models.CharField(max_length=100)
+    file = models.FileField(upload_to="notes/")
+    uploaded_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.semester} - {self.subject}"

@@ -1,0 +1,219 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #0B2D4A;
+    color: white;
+}
+
+header {
+    background-color: #053c69;
+    padding: 15px 30px;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #F7C76F;
+    text-align: center;
+}
+
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    background: white;
+    color: #0B2D4A;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+h2 {
+    text-align: center;
+    color: #053c69;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+label {
+    font-weight: bold;
+}
+
+select, input[type="text"], input[type="file"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1em;
+}
+
+button {
+    background-color: #F7C76F;
+    color: #0B2D4A;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #e0b85f;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    background: #f5f5f5;
+    margin: 10px 0;
+    padding: 12px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+li a {
+    background: #053c69;
+    color: white;
+    text-decoration: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-size: 0.9em;
+    transition: 0.3s;
+}
+
+li a:hover {
+    background: #075a9c;
+}
+
+
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+    color: #0B2D4A;
+    position: relative;
+}
+
+#closeModal {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+#uploadBtn {
+    background: #F7C76F;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+#downloadBtn {
+    background: #053c69;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+/* Make the anchor behave exactly like other .feature-card blocks */
+a.feature-card,
+a.feature-card:link,
+a.feature-card:visited {
+  display: block;                /* block-level card */
+  background-color: #FAFAFA;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  color: inherit !important;     /* override default link color */
+  text-decoration: none !important; /* remove underline */
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+/* Title styling */
+a.feature-card h4 {
+  margin: 10px 0 5px;
+  color: #053c69;         /* match other card headings */
+  font-weight: 700;
+}
+
+/* Description */
+a.feature-card p {
+  margin: 0;
+  font-size: 0.9em;
+  color: #333;
+}
+
+/* Hover / focus (keyboard accessible) */
+a.feature-card:hover,
+a.feature-card:focus {
+  transform: translateY(-8px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+  background-color: #FFF7E0;
+  color: #0B2D4A !important;
+  outline: none;  /* remove default outline if you want, but consider adding a custom focus style for accessibility */
+}
+
+/* Strong overrides in case another style is more specific */
+.features a.feature-card,
+.features a.feature-card * {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
+/* Optional: visible focus ring for keyboard users (recommended) */
+a.feature-card:focus {
+  box-shadow: 0 0 0 4px rgba(247,199,111,0.25);
+}
+
+        .logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.3em;
+  font-weight: bold;
+  margin: 0;
+  transition: all 0.4s ease;
+}
+
+a{
+    text-decoration: none;
+}
+
+.logo a {
+  text-decoration: none;
+  color: white;              
+  display: flex;
+  align-items: center;
+  gap: 8px;                  
+  transition: all 0.3s ease;
+}

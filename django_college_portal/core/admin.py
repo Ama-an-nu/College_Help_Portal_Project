@@ -1,5 +1,6 @@
 from django.contrib import admin
-from .models import Department, Course, Faculty, Student, Placement, Event, StudyRoadmap, Resource
+from .models import Department, Course, Faculty, Student, Placement, Event, Resource, Note
+
 
 @admin.register(Department)
 class DepartmentAdmin(admin.ModelAdmin):
@@ -34,13 +35,18 @@ class EventAdmin(admin.ModelAdmin):
     list_filter = ("date", "department")
     search_fields = ("title",)
 
-@admin.register(StudyRoadmap)
-class StudyRoadmapAdmin(admin.ModelAdmin):
-    list_display = ("course",)
-    search_fields = ("course__title",)
 
 @admin.register(Resource)
 class ResourceAdmin(admin.ModelAdmin):
     list_display = ("title", "uploaded_by", "uploaded_at")
     list_filter = ("uploaded_at",)
     search_fields = ("title",)
+
+
+
+
+@admin.register(Note)
+class NoteAdmin(admin.ModelAdmin):
+    list_display = ("semester", "subject", "file", "uploaded_at")
+    search_fields = ("semester", "subject")
+    list_filter = ("semester",)

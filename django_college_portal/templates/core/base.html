@@ -9,15 +9,20 @@
 <link rel="stylesheet" href="{% static 'css/base.css' %}">
 </head>
 <style>
-.flash-messages {
+
+
+
+
+
+/* .flash-messages {
     position: fixed;
     top: 20px;
     left: 50%;
-    transform: translateX(-50%); /* centers it horizontally */
+    transform: translateX(-50%); 
     z-index: 1000;
     text-align: center;
     width: auto;
-    max-width: 80%; /* so it doesn’t get too wide */
+    max-width: 80%; 
 }
 
 .alert {
@@ -28,7 +33,7 @@
     font-weight: bold;
     margin-bottom: 10px;
     box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-    display: inline-block; /* keeps it tight */
+    display: inline-block; 
     animation: fadeOut 4s forwards;
 }
 
@@ -44,8 +49,8 @@
 }
 
 .logout-btn {
-    background-color: #E57373; /* red for logout */
-}
+    background-color: #E57373; 
+} */
 
 </style>
 <body>
@@ -103,31 +108,32 @@
 
 
 <section class="features">
-    <div class="feature-card">
+    <a href="#" class="feature-card">
         <h4>Course Recommender</h4>
         <p>Personalized course guidance</p>
-    </div>
-    <div class="feature-card">
+    </a>
+
+    <a href="#" class="feature-card">
         <h4>AI Chatbot Support</h4>
         <p>24/7 instant help</p>
-    </div>
-    <div class="feature-card">
+    </a>
+
+    <a href="{% url 'notes_page' %}" class="feature-card">
         <h4>Notes</h4>
         <p>Upload/Download notes for specific Subject</p>
-    </div>
-    <div class="feature-card">
-        <h4>Study Roadmaps</h4>
-        <p>Personalized academic plans</p>
-    </div>
-    <div class="feature-card">
+    </a>
+
+    <a href="#" class="feature-card">
         <h4>Faculty & Dept Finder</h4>
         <p>Navigate campus resources</p>
-    </div>
-    <div class="feature-card">
+    </a>
+
+    <a href="#" class="feature-card">
         <h4>Placement Prep</h4>
         <p>Resume tips and interview questions</p>
-    </div>
+    </a>
 </section>
+
 
 <section class="testimonials">
     <div class="testimonial">
@@ -145,9 +151,13 @@
 </section>
 
 <section class="cta">
-    <h2>Start Your Journey with CGIC Today</h2>
+  <h2>Start Your Journey with CGIC Today</h2>
+  <a href="{% url 'signup_page' %}">
     <button>Get Started</button>
+  </a>
 </section>
+
+
 
 </body>
 </html>

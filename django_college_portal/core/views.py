@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.contrib.auth.models import User
+from .models import Note
+
 
 def dashboard(request):
     return render(request, 'core/dashboard.html')
@@ -73,3 +75,28 @@ def features_page(request):
 def chatbot_page(request):
     query = request.GET.get("query", "")
     return render(request, "core/chatbot.html", {"query": query})
+
+
+
+
+def notes_page(request):
+    notes = None
+
+    if request.method == "POST" and "file" in request.FILES:
+        # Upload logic
+        semester = request.POST['semester']
+        subject = request.POST['subject']
+        file = request.FILES['file']
+        Note.objects.create(semester=semester, subject=subject, file=file)
+        return redirect('notes_page')
+
+    # For filtering (download section)
+    sem = request.GET.get('semester')
+    sub = request.GET.get('subject')
+
+    if sem and sub:
+        notes = Note.objects.filter(semester=sem, subject=sub)
+    
+
+    return render(request, "core/notes.html", {"notes": notes})
+

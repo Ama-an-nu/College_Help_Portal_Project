@@ -25,13 +25,13 @@
     <div class="chat-window" id="chat-window">
       
       {% if query %}
-        <!-- Show user query if redirected from hero search bar -->
+        
         <div class="message user">{{ query }}</div>
         <div class="message bot">
           I see you asked about "{{ query }}". Let me help you with that.
         </div>
       {% else %}
-        <!-- Default greeting if no query -->
+        
         <div class="message bot">
           Hello 👋 I’m your College Help Assistant. How can I help?
         </div>
@@ -42,7 +42,7 @@
     <form class="chat-input" id="chat-form" method="post">
       {% csrf_token %}
       <input type="text" id="user-input" name="message" placeholder="Type your message..." required>
-      <button type="submit">➤</button>
+      <button type="submit">🫆</button>
     </form>
   </div>
 </main>

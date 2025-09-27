@@ -1,0 +1,267 @@
+
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #0B2D4A;
+        color: white;
+    }
+
+
+.logo {
+    transition: all 0.4s ease;
+}
+
+.logo:hover {
+    color: #FFD700;
+    text-shadow: 0 0 5px #FFD700, 0 0 10px #FFD700, 0 0 20px #FFD700;
+    transform: scale(1.08); 
+    transition: all 0.3s ease;
+}
+
+   header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background-color: #0B2D4A;
+}
+
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+.logo img {
+  height: 30px;
+  margin-right: 10px;
+}
+
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  gap: 20px; 
+}
+
+
+nav {
+  display: flex;
+  align-items: center;
+}
+nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: all 0.4s ease;
+}
+
+nav a:hover {
+  color: #FFD700;
+  text-shadow: 0 0 3px #FFD700, 0 0 6px #FFD700;
+  transform: scale(1.05);
+  transition: all 0.25s ease;
+}
+
+.signup-btn {
+  background-color: #F7C76F;
+  color: black;
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  border: 2px solid transparent;
+}
+
+.signup-btn:hover {
+  background-color: transparent;
+  border: 2px solid #FFD700;
+  color: #FFD700;
+  transform: none !important; 
+  transition: color 0.25s ease, border-color 0.25s ease, background-color 0.25s ease;
+}
+
+    .hero {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 50px;
+    }
+    .hero-text h1 {
+        font-size: 2.5em;
+        line-height: 1.2;
+    }
+    .hero-text h1 span {
+        color: #F7C76F;
+    }
+    .hero-text p {
+        margin: 10px 0 20px;
+    }
+    .search-bar {
+  display: flex;
+  align-items: center;
+  max-width: 400px;
+  margin: 0 auto;
+  border-radius: 999px;   
+  overflow: hidden;      
+  background: white;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+
+.search-bar input {
+  flex: 1;
+  padding: 12px 18px;
+  border: none;
+  outline: none;
+  font-size: 1em;
+  border-radius: 0;       
+}
+
+
+.search-bar button {
+  background: #F7C76F;
+  color: #053c69;
+  border: none;
+  padding: 12px 24px;     
+  font-size: 1.2em;
+  border-radius: 0;       
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.search-bar button:hover {
+  background: #FFD700;
+}
+
+
+    .features {
+        background-color: white;
+        color: black;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        padding: 30px 50px;
+    }
+    
+    .feature-card {
+        background-color: #FAFAFA;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .feature-card h4 {
+        margin: 10px 0 5px;
+    }
+
+    .feature-card {
+    background-color: #FAFAFA;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.feature-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    background-color: #FFF7E0; 
+}
+
+
+    .testimonials {
+    display: flex;              
+    justify-content: center;    
+    gap: 40px;                  
+    padding: 30px 50px;         
+    background-color: #0B2D4A;  
+    text-align: center;          
+}
+.testimonial {
+    max-width: 250px;
+    padding: 15px;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.testimonial:hover {
+    transform: translateY(-8px); 
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    background-color: rgba(255,255,255,0.05); 
+}
+
+.testimonial {
+    max-width: 250px;        
+}
+.testimonial img {
+    border-radius: 50%;      
+    width: 60px;
+    height: 60px;
+}
+    .cta {
+        text-align: center;
+        padding: 30px;
+        background-color: #0B2D4A;
+    }
+    .cta button {
+        background-color: #F7C76F;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 20px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    .cta button {
+  background-color: #F7C76F;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta button:hover {
+  transform: scale(1.07); 
+  box-shadow: 0 0 10px 2px rgba(255, 215, 0, 0.5); 
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #053c69;
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: #075a9c;
+}
+
+.feature-card {
+    display: block;                  /* make <a> behave like a card */
+    background-color: #FAFAFA;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-decoration: none;           /* remove underline */
+    color: inherit;                  /* keep normal text color */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card h4,
+.feature-card p {
+    color: inherit;                  /* use normal colors */
+}
+
+/* Hover effect same as before */
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    background: #f9fafb;
+}
