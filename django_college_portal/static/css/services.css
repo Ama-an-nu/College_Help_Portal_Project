@@ -109,11 +109,11 @@ nav a.active {
 .service-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 16px rgba(0,0,0,0.15),
-              0 0 12px rgba(255, 215, 0, 0.5); /* golden glow */
+              0 0 12px rgba(255, 215, 0, 0.5); 
   filter: brightness(1.05);
 }
 
-/* Logo container */
+
 .logo {
   display: flex;
   align-items: center;
@@ -123,29 +123,29 @@ nav a.active {
   transition: all 0.4s ease;
 }
 
-/* Logo link (so text + img act as one unit) */
+
 .logo a {
   text-decoration: none;
-  color: white;               /* default color */
+  color: white;               
   display: flex;
   align-items: center;
-  gap: 8px;                   /* space between image and text */
+  gap: 8px;                   
   transition: all 0.3s ease;
 }
 
-/* Logo image */
+
 .logo img {
   height: 35px;
 }
 
-/* Hover effect */
+
 .logo a:hover {
-  color: #FFD700;             /* gold hover */
+  color: #FFD700;            
   text-shadow: 
     0 0 5px #FFD700,
     0 0 10px #FFD700,
     0 0 20px #FFD700;
-  transform: scale(1.08);     /* subtle zoom */
+  transform: scale(1.08);     
 }
 
 

@@ -27,11 +27,11 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Bind both upload & download forms
+    
     updateSubjects("upload_semester", "upload_subject");
     updateSubjects("semester", "subject");
 
-    // Upload modal logic
+   
     const modal = document.getElementById("uploadModal");
     const uploadBtn = document.getElementById("uploadBtn");
     const closeModal = document.getElementById("closeModal");
@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
   if (messagesList) {
     const messages = messagesList.querySelectorAll("li");
     messages.forEach((msg, index) => {
-      showToast(msg.textContent, index * 500); // stagger if multiple
+      showToast(msg.textContent, index * 500); 
     });
   }
 });
@@ -63,10 +63,10 @@ function showToast(message, delay = 0) {
     toast.textContent = message;
     container.appendChild(toast);
 
-    // trigger show animation
+  
     setTimeout(() => toast.classList.add("show"), 100);
 
-    // auto remove after 4 seconds
+
     setTimeout(() => {
       toast.classList.remove("show");
       setTimeout(() => toast.remove(), 500);

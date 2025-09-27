@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
       profileDropdown.classList.toggle("open");
     });
 
-    // Close if clicked outside
+   
     document.addEventListener("click", (e) => {
       if (!profileDropdown.contains(e.target)) {
         profileDropdown.classList.remove("open");

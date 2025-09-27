@@ -166,7 +166,7 @@ a{
   transition: all 0.3s ease;
 }
 
-/* Notes list grid */
+
 .notes-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -174,7 +174,7 @@ a{
   margin-top: 20px;
 }
 
-/* Individual note card */
+
 .note-card {
   background-color: #FAFAFA;
   padding: 16px;
@@ -186,10 +186,10 @@ a{
 .note-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-  background: #FFF7E0; /* light highlight on hover */
+  background: #FFF7E0; 
 }
 
-/* Heading */
+
 .note-card h4 {
   margin: 0 0 8px;
   font-size: 16px;
@@ -197,14 +197,14 @@ a{
   color: #0B2D4A;
 }
 
-/* Details (uploaded date, filename) */
+
 .note-card p {
   margin: 4px 0;
   font-size: 14px;
   color: #555;
 }
 
-/* Actions (Preview + Download buttons) */
+
 .note-card .actions {
   margin-top: 12px;
   display: flex;
@@ -222,7 +222,7 @@ a{
   transition: all 0.3s ease;
 }
 
-/* Preview button */
+
 .btn-preview {
   background-color: #053c69;
   color: white;
@@ -232,7 +232,7 @@ a{
   background-color: #075a9c;
 }
 
-/* Download button */
+
 .btn-download {
   background-color: #F7C76F;
   color: black;
@@ -259,7 +259,7 @@ a{
   opacity: 1;
 }
 
-/* Toast container */
+
 #toast-container {
   position: fixed;
   top: 20px;
@@ -267,9 +267,9 @@ a{
   z-index: 1000;
 }
 
-/* Toast message */
+
 .toast {
-  background: #4caf50; /* green for success */
+  background: #4caf50; 
   color: white;
   padding: 12px 18px;
   margin-bottom: 10px;
@@ -281,7 +281,7 @@ a{
   transition: all 0.5s ease;
 }
 
-/* When visible */
+
 .toast.show {
   opacity: 1;
   transform: translateX(0);

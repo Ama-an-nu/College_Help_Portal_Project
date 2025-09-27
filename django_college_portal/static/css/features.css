@@ -117,8 +117,8 @@ nav a.active {
 .feature-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 16px rgba(0,0,0,0.15), 
-              0 0 12px rgba(255, 215, 0, 0.5); /* golden glow */
-  filter: brightness(1.05); /* slight brightness */
+              0 0 12px rgba(255, 215, 0, 0.5);
+  filter: brightness(1.05);
 }
 
 

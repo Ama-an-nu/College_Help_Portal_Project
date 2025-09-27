@@ -8,7 +8,7 @@ body {
   height: 100vh;
 }
 
-/* Header with logo */
+
 header {
   background-color: #053c69;
   padding: 12px 20px;
@@ -28,14 +28,14 @@ header {
   margin-right: 8px;
 }
 
-/* Chat wrapper fills screen */
+
 .chat-wrapper {
   display: flex;
   flex-direction: column;
   flex: 1;
 }
 
-/* Centered content container (for both messages + input) */
+
 .chat-container {
   max-width: 700px;
   width: 100%;
