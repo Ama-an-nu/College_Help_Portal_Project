@@ -241,3 +241,48 @@ a{
 .btn-download:hover {
   background-color: #FFD700;
 }
+
+.toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #4caf50;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+  z-index: 1000;
+}
+.toast.show {
+  opacity: 1;
+}
+
+/* Toast container */
+#toast-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+/* Toast message */
+.toast {
+  background: #4caf50; /* green for success */
+  color: white;
+  padding: 12px 18px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  font-size: 14px;
+  opacity: 0;
+  transform: translateX(100%);
+  transition: all 0.5s ease;
+}
+
+/* When visible */
+.toast.show {
+  opacity: 1;
+  transform: translateX(0);
+}

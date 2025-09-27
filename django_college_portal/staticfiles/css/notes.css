@@ -144,58 +144,6 @@ li a:hover {
     margin-top: 15px;
 }
 
-/* Make the anchor behave exactly like other .feature-card blocks */
-a.feature-card,
-a.feature-card:link,
-a.feature-card:visited {
-  display: block;                /* block-level card */
-  background-color: #FAFAFA;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-  color: inherit !important;     /* override default link color */
-  text-decoration: none !important; /* remove underline */
-  cursor: pointer;
-  border: 1px solid transparent;
-}
-
-/* Title styling */
-a.feature-card h4 {
-  margin: 10px 0 5px;
-  color: #053c69;         /* match other card headings */
-  font-weight: 700;
-}
-
-/* Description */
-a.feature-card p {
-  margin: 0;
-  font-size: 0.9em;
-  color: #333;
-}
-
-/* Hover / focus (keyboard accessible) */
-a.feature-card:hover,
-a.feature-card:focus {
-  transform: translateY(-8px);
-  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
-  background-color: #FFF7E0;
-  color: #0B2D4A !important;
-  outline: none;  /* remove default outline if you want, but consider adding a custom focus style for accessibility */
-}
-
-/* Strong overrides in case another style is more specific */
-.features a.feature-card,
-.features a.feature-card * {
-  color: inherit !important;
-  text-decoration: none !important;
-}
-
-/* Optional: visible focus ring for keyboard users (recommended) */
-a.feature-card:focus {
-  box-shadow: 0 0 0 4px rgba(247,199,111,0.25);
-}
-
         .logo {
   display: flex;
   align-items: center;
@@ -216,4 +164,97 @@ a{
   align-items: center;
   gap: 8px;                  
   transition: all 0.3s ease;
+}
+
+/* Notes list grid */
+.notes-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* Individual note card */
+.note-card {
+  background-color: #FAFAFA;
+  padding: 16px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.note-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  background: #FFF7E0; /* light highlight on hover */
+}
+
+/* Heading */
+.note-card h4 {
+  margin: 0 0 8px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #0B2D4A;
+}
+
+/* Details (uploaded date, filename) */
+.note-card p {
+  margin: 4px 0;
+  font-size: 14px;
+  color: #555;
+}
+
+/* Actions (Preview + Download buttons) */
+.note-card .actions {
+  margin-top: 12px;
+  display: flex;
+  gap: 10px;
+}
+
+.note-card .actions a {
+  flex: 1;
+  text-align: center;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+/* Preview button */
+.btn-preview {
+  background-color: #053c69;
+  color: white;
+}
+
+.btn-preview:hover {
+  background-color: #075a9c;
+}
+
+/* Download button */
+.btn-download {
+  background-color: #F7C76F;
+  color: black;
+}
+
+.btn-download:hover {
+  background-color: #FFD700;
+}
+
+.toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #4caf50;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+  z-index: 1000;
+}
+.toast.show {
+  opacity: 1;
 }

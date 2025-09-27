@@ -9,9 +9,7 @@
 </head>
 <body>
 
-    <style>
-
-    </style>
+    
 
 
    <a href="{% url 'base' %}" class="logo-link">
@@ -92,4 +90,17 @@
             <p>No notes found.</p>
         {% endfor %}
     </div>
+
+
 {% endif %}
+
+{% if messages %}
+  <ul id="django-messages" style="display:none;">
+    {% for message in messages %}
+      <li>{{ message }}</li>
+    {% endfor %}
+  </ul>
+{% endif %}
+
+
+    <div id="toast-container"></div>

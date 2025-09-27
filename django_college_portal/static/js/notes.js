@@ -42,3 +42,36 @@ document.addEventListener("DOMContentLoaded", function () {
         if (event.target === modal) modal.style.display = "none";
     };
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const messagesList = document.getElementById("django-messages");
+
+  if (messagesList) {
+    const messages = messagesList.querySelectorAll("li");
+    messages.forEach((msg, index) => {
+      showToast(msg.textContent, index * 500); // stagger if multiple
+    });
+  }
+});
+
+function showToast(message, delay = 0) {
+  setTimeout(() => {
+    const container = document.getElementById("toast-container");
+
+    const toast = document.createElement("div");
+    toast.classList.add("toast");
+    toast.textContent = message;
+    container.appendChild(toast);
+
+    // trigger show animation
+    setTimeout(() => toast.classList.add("show"), 100);
+
+    // auto remove after 4 seconds
+    setTimeout(() => {
+      toast.classList.remove("show");
+      setTimeout(() => toast.remove(), 500);
+    }, 4000);
+  }, delay);
+}
+
+

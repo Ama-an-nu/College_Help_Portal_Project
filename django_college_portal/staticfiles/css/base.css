@@ -244,24 +244,62 @@ nav a:hover {
 }
 
 .feature-card {
-    display: block;                  /* make <a> behave like a card */
+    display: block;                  
     background-color: #FAFAFA;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    text-decoration: none;           /* remove underline */
-    color: inherit;                  /* keep normal text color */
+    text-decoration: none;           
+    color: inherit;                 
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .feature-card h4,
 .feature-card p {
-    color: inherit;                  /* use normal colors */
+    color: inherit;                  
 }
 
-/* Hover effect same as before */
+
 .feature-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 12px rgba(0,0,0,0.15);
     background: #f9fafb;
+}
+
+.flash-messages {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%); 
+    z-index: 1000;
+    text-align: center;
+    width: auto;
+    max-width: 80%; 
+}
+
+.alert {
+    background: #F7C76F;
+    color: #0B2D4A;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    display: inline-block; 
+    animation: fadeOut 4s forwards;
+}
+
+.alert.error {
+    background: #E57373;
+    color: white;
+}
+
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    80% { opacity: 1; }
+    100% { opacity: 0; transform: translateY(-20px); }
+}
+
+.logout-btn {
+    background-color: #E57373; 
 }

@@ -83,14 +83,16 @@ def notes_page(request):
     notes = None
 
     if request.method == "POST" and "file" in request.FILES:
-        # Upload logic
+      
         semester = request.POST['semester']
         subject = request.POST['subject']
         file = request.FILES['file']
         Note.objects.create(semester=semester, subject=subject, file=file)
+        messages.success(request, "✅ File uploaded successfully!")
         return redirect('notes_page')
-
-    # For filtering (download section)
+    
+    
+    
     sem = request.GET.get('semester')
     sub = request.GET.get('subject')
 

@@ -42,3 +42,21 @@ document.addEventListener("DOMContentLoaded", function () {
         if (event.target === modal) modal.style.display = "none";
     };
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const messagesList = document.getElementById("django-messages");
+
+  if (messagesList) {
+    const messages = messagesList.querySelectorAll("li");
+
+    messages.forEach((msg) => {
+      const toast = document.createElement("div");
+      toast.classList.add("toast");
+      toast.textContent = msg.textContent;
+      document.body.appendChild(toast);
+
+      setTimeout(() => toast.classList.add("show"), 100);
+      setTimeout(() => toast.remove(), 4000);
+    });
+  }
+});
