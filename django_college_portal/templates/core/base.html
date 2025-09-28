@@ -7,13 +7,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>College Help Portal</title>
 <link rel="stylesheet" href="{% static 'css/base.css' %}">
-<script src="{% static 'js/base.js' %}"></script>
-
+<script src="{% static 'js/base.js' %}" defer></script>
 </head>
 
 <body>
 
-      {% if messages %}
+{% if messages %}
   <div class="flash-messages">
     {% for message in messages %}
       <div class="alert {{ message.tags }}">
@@ -30,39 +29,38 @@
   </div>
   <div class="nav-container">
     <nav>
-      
       <a href="{% url 'features_page' %}">Features</a>
       <a href="{% url 'chatbot_page' %}">Chatbot</a>
       <a href="{% url 'services_page' %}">Services</a>
       <a href="{% url 'about_page' %}">About</a>
-      
     </nav>
- 
-{% if user.is_authenticated %}
-<div class="profile-dropdown">
-  <button type="button" class="profile-btn">
-    <img src="{% if user.profile.image %}{{ user.profile.image.url }}{% else %}{% static 'images/man-user-color-icon.webp' %}{% endif %}" 
-         alt="User" class="profile-icon">
-    {{ user.username }}
-    <span class="arrow">▾</span>
-  </button>
 
-  <div class="dropdown-menu">
-    <div class="user-info">
-      <img src="{% if user.profile.image %}{{ user.profile.image.url }}{% else %}{% static 'images/man-user-color-icon.webp' %}{% endif %}" 
-           alt="User" class="dropdown-profile-pic">
-      <div>
-        <strong>{{ user.username }}</strong><br>
-        <small>{{ user.email }}</small>
+    {% if user.is_authenticated %}
+    <div class="profile-dropdown">
+      <button type="button" class="profile-btn">
+        <img src="{% if user.profile.image %}{{ user.profile.image.url }}{% else %}{% static 'images/man-user-color-icon.webp' %}{% endif %}" 
+             alt="User" class="profile-icon">
+        {{ user.username }}
+        <span class="arrow">▾</span>
+      </button>
+
+      <div class="dropdown-menu">
+        <div class="user-info">
+          <img src="{% if user.profile.image %}{{ user.profile.image.url }}{% else %}{% static 'images/man-user-color-icon.webp' %}{% endif %}" 
+               alt="User" class="dropdown-profile-pic">
+          <div>
+            <strong>{{ user.username }}</strong><br>
+            <small>{{ user.email }}</small>
+          </div>
+        </div>
+        <hr>
+        <a href="#">Change Profile Picture</a>
+        
+        <a href="#" id="logoutTrigger" class="logout-btn">Logout</a>
       </div>
     </div>
-    <hr>
-    <a href="#">Change Profile Picture</a>
-    <a href="{% url 'logout' %}" class="logout-btn">Logout</a>
+    {% endif %}
   </div>
-</div>
-{% endif %}
-
 </header>
 
 <section class="hero">
@@ -70,24 +68,18 @@
       <h1>Your Smart<br>College <span>Assistant</span></h1>
       <p>One portal, Infinite support.</p>
 
-      
       <div class="search-bar">
-  <form action="{% url 'chatbot_page' %}" method="get" style="display:flex; flex:1;">
-    <input type="text" name="query" placeholder="Ask me anything..." required>
-    <button type="submit">➔</button>
-  </form>
-</div>
-
+        <form action="{% url 'chatbot_page' %}" method="get" style="display:flex; flex:1;">
+          <input type="text" name="query" placeholder="Ask me anything..." required>
+          <button type="submit">➔</button>
+        </form>
+      </div>
   </div>
 
   <div class="hero-image">
       <img src="{% static 'images/robot-bot-icon.png' %}" alt="AI Assistant" width="300"/>
   </div>
 </section>
-
-
-
-
 
 <section class="features">
     <a href="#" class="feature-card">
@@ -116,8 +108,6 @@
     </a>
 </section>
 
-
-
 <section class="greetings">
   {% if user.is_authenticated %}
     <h2>Welcome back, {{ user.username }} 🎉</h2>
@@ -127,6 +117,22 @@
     <p>Please <a href="{% url 'login_page' %}">Login</a> or <a href="{% url 'signup_page' %}">Signup</a> to continue.</p>
   {% endif %}
 </section>
+
+
+<div id="logoutModal" class="modal">
+  <div class="modal-content">
+    <h2>Logout Confirmation</h2>
+    <p>Are you sure you want to logout from <strong>{{ user.email }}</strong>?</p>
+    <div class="modal-actions">
+      <form id="logoutForm" action="{% url 'logout' %}" method="post">
+        {% csrf_token %}
+        <button type="submit" id="confirmLogout">Yes, Logout</button>
+      </form>
+      <button type="button" id="cancelLogout">Cancel</button>
+    </div>
+  </div>
+</div>
+
 
 
 
