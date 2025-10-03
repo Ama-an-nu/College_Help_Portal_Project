@@ -2,14 +2,14 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.contrib.auth.models import User
+import openai
+from django.conf import settings
+
 from .models import Note
 
 
 def dashboard(request):
     return render(request, 'core/dashboard.html')
-
-def chat_page(request):
-    return render(request, 'core/chatbot.html')
 
 def base(request):
     return render(request, 'core/base.html')
@@ -107,3 +107,36 @@ def landing_page(request):
     if request.user.is_authenticated:
         return redirect('base')
     return render(request, "core/landing.html")
+
+
+
+openai.api_key = settings.OPENAI_API_KEY
+
+def chatbot_page(request):
+    query = request.GET.get("query") or request.POST.get("message")
+    bot_response = None
+
+    if query:
+        try:
+            response = openai.chat.completions.create(
+                model="gpt-3.5-turbo",
+                messages=[
+                    {"role": "system", "content": "You are a helpful college assistant."},
+                    {"role": "user", "content": query},
+                ]
+            )
+            bot_response = response.choices[0].message.content
+
+        except openai.RateLimitError:
+            bot_response = "⚠️ Sorry, your free trial quota has been exceeded. Please try again later."
+
+        except openai.OpenAIError as e:
+            bot_response = f"⚠️ OpenAI API error: {str(e)}"
+
+        except Exception as e:
+            bot_response = f"⚠️ Unexpected error: {str(e)}"
+
+    return render(request, "core/chatbot.html", {
+        "query": query,
+        "response": bot_response
+    })
